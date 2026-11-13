@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Windowed Zoom</title>
+  <style>
+    body { width: 280px; margin: 0; padding: 14px 16px; font: 13px/1.4 system-ui, sans-serif; color: #222; }
+    h1 { font-size: 15px; margin: 0 0 12px; }
+    label.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 10px 0; cursor: pointer; }
+    .sub { margin-left: 14px; color: #555; }
+    input[type="range"] { width: 120px; }
+    select { padding: 2px 4px; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 12px 0; }
+    .tips { color: #666; font-size: 12px; margin: 0; padding-left: 16px; }
+    .tips li { margin: 3px 0; }
+    kbd { background: #eee; border: 1px solid #ccc; border-radius: 3px; padding: 0 4px; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <h1>YouTube Windowed Zoom</h1>
+
+  <label class="row">Tela cheia dentro da janela
+    <input type="checkbox" id="windowedFullscreen">
+  </label>
+
+  <label class="row">Zoom com scroll + arrastar
+    <input type="checkbox" id="zoomEnabled">
+  </label>
+
+  <label class="row sub">Só em tela cheia
+    <input type="checkbox" id="zoomOnlyInFullscreen">
+  </label>
+
+  <label class="row sub">Velocidade do zoom
+    <input type="range" id="zoomSpeed" min="0.3" max="3" step="0.1">
+  </label>
+
+  <label class="row sub">Zoom máximo
+    <select id="maxZoom">
+      <option value="4">4×</option>
+      <option value="6">6×</option>
+      <option value="8">8×</option>
+      <option value="12">12×</option>
+      <option value="16">16×</option>
+    </select>
+  </label>
+
+  <hr>
+  <ul class="tips">
+    <li><kbd>Shift</kbd> + tela cheia = tela cheia real (monitor todo)</li>
+    <li><kbd>Esc</kbd> sai da tela cheia na janela</li>
+    <li>Clique do meio no vídeo = volta ao zoom 1×</li>
+  </ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>
